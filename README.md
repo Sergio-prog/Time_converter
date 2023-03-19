@@ -9,12 +9,16 @@ century, second*
 
 Also, you can pass parameters in the *time.timedelta* class form
 
----------
+---
 
 # Code Example
 
-> weeks = Time(type_="week", value=5)
->
-> print(weeks.to_day())
+```
+weeks = Time(type_="week", value=5)
 
-> 25.0
+print(weeks.to_day())
+```
+
+```
+35.0
+```
