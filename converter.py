@@ -1,19 +1,19 @@
 import datetime
 from typing import Union, Optional
 
-__version__ = "0.6a"
+__version__ = "0.7b"
 
 
 class Time:
-    def __init__(self, _type: str = "second", value: Union[float, int, datetime.timedelta] = 0):
+    def __init__(self, type_: str = "second", value: Union[float, int, datetime.timedelta] = 0):
         """
-                :type _type: str
+                :type type_: str
                 :type value: float, int
-                :argument _type: Can be a ['nanosecond', 'microsecond', 'millisecond', 'minute', 'hour', 'day', 'week', 'month', 'year', 'century]
+                :argument type_: Can be a ['nanosecond', 'microsecond', 'millisecond', 'minute', 'hour', 'day', 'week', 'month', 'year', 'century]
                 :argument value: Amount of time of the specified type
             """
 
-        self.type = _type.lower()
+        self.type = type_.lower()
         self.value = value.total_seconds() if type(value) == datetime.timedelta else value
         self.convert_to_seconds = {"nanosecond": "{}/1000000000", "microsecond": "{}/1000000", "millisecond": "{}/1000",
                                    "minute": "{}*60",
@@ -23,7 +23,7 @@ class Time:
 
         if self.type not in valid_types:
             raise TypeError("Incorrect type to convert, please, read func doc string.")
-        
+
         if self.type != "second" and type(value) == datetime.timedelta:
             raise TypeError("Incorrect attributes types, you can not use '_type' and 'datetime.timedelta' value.")
 
@@ -100,6 +100,5 @@ class Time:
 
 
 if __name__ == "__main__":
-    t = datetime.timedelta(seconds=15, minutes=9)
-    s = Time(_type="week", value=5)
-    print(s.full_report())
+    s = Time(type_="week", value=5)
+    print(s.to_day())

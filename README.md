@@ -1,11 +1,20 @@
-Program for searching any file in all of you computer
+# Time converter
 
-Example:
+Version 0.7b
 
-```python
-search = Search(r"C:/Games")
-print(search.search_by_suffix(".db"))
+Light and Fast Time converter class for Python
 
->> 'C:\\Games\\Adobe\\Adobe Premiere Pro 2023\\typesupport\\FntNames.db',
->> 'C:\\Games\\osu!\\collection.db'...
-```
+The program can convert such time values: *nanosecond, microsecond, millisecond, minute, hour, day, week, month, year,
+century, second*
+
+Also, you can pass parameters in the *time.timedelta* class form
+
+---------
+
+# Code Example
+
+> weeks = Time(type_="week", value=5)
+>
+> print(weeks.to_day())
+
+> 25.0
