@@ -13,12 +13,13 @@ Also, you can pass parameters in the *time.timedelta* class form
 
 # Code Example
 
-```
-weeks = Time(type_="week", value=5)
+```python
+from converter import Time
 
+weeks = Time(type_="week", value=5)
 print(weeks.to_day())
 ```
 
-```
+```bash
 35.0
 ```
