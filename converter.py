@@ -98,7 +98,11 @@ class Time:
     def timedelta_object(self):
         return datetime.timedelta(seconds=self.to_seconds())
 
+    @property
+    def total_seconds(self):
+        return self.to_seconds()
+
 
 if __name__ == "__main__":
     s = Time(type_="week", value=5)
-    print(s.to_day())
+    print(s.total_seconds)
