@@ -85,7 +85,7 @@ class Time:
     def __str__(self):
         return "{} {}s".format(str(self.value), str(self.type))
 
-    def full_report(self):
+    def full_report(self) -> dict:
         return {"nanosecond": self.to_nanosecond(), "microsecond": self.to_microsecond(),
                 "millisecond": self.to_millisecond(),
                 "second": self.to_seconds(),
@@ -95,11 +95,15 @@ class Time:
                 "year": self.to_year(), "century": self.to_century()}
 
     @property
-    def timedelta_object(self):
+    def timedelta_object(self) -> datetime.timedelta:
         return datetime.timedelta(seconds=self.to_seconds())
 
     @property
-    def total_seconds(self):
+    def time_object(self) -> datetime.datetime:
+        return datetime.datetime.min + self.timedelta_object
+
+    @property
+    def total_seconds(self) -> float:
         return self.to_seconds()
 
 
