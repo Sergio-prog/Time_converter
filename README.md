@@ -1,14 +1,13 @@
 # Time converter
 
-Version 0.7b
+Version 0.75b
 
 Light and Fast Time converter class for Python
 
 The program can convert such time values: *nanosecond, microsecond, millisecond, minute, hour, day, week, month, year,
 century, second*
 
-Also, you can pass parameters in the *time.timedelta* class form
-
+Also, you can pass parameters in the *datetime.timedelta* and *datetime.datetime* class form
 ---
 
 # Code Example
@@ -18,8 +17,5 @@ from converter import Time
 
 weeks = Time(type_="week", value=5)
 print(weeks.to_day())
-```
-
-```bash
-35.0
+# > 35.0
 ```

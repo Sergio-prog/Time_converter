@@ -1,7 +1,7 @@
 import datetime
 from typing import Union, Optional
 
-__version__ = "0.7b"
+__version__ = "0.75b"
 
 
 class Time:
